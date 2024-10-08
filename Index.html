@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CodeQuest</title>
+<link rel="stylesheet" href="styles.css">
+<script src="script.js"></script>
+<script src="brython.js"></script>
+<script src="brython_stdlib.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <div class="sidebar-item" onclick="mostrarContenido('inicio')">🏠 Inicio</div>
+      <div class="sidebar-item" onclick="mostrarContenido('python')">🐍 Python</div>
+      <div class="sidebar-item" onclick="mostrarContenido('java')">☕ Java</div>
+      <div class="sidebar-item" onclick="mostrarContenido('csharp')">🔷 C#</div>
+      <div class="sidebar-item">🏆 Desafíos</div>
+      <div class="sidebar-item">👤 Perfil</div>
+      <div class="sidebar-item">🏅 Torneos</div>
+      <div class="sidebar-item">🛒 Tienda</div>
+    </div>
+
+    <div class="main-content">
+
+      <div id="inicio" class="contenido">
+        <h1>CodeQuest - Aprende Programación</h1>
+        <div class="top-bar"> 
+          <div style="display: flex;">
+            <span style="margin-right: 15px;">🏆 1200 XP</span>
+            <div class="currency">
+              <svg class="currency-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" fill="#FFD700"/>
+              </svg>
+              <span>💸500 Debug Dollars</span>
+            </div>
+          </div>
+        </div>
+        <div class="level-path">
+          <div class="level">1</div>
+          <div class="level">2</div>
+          <div class="level">3</div>
+          <div class="level">4</div>
+          <div class="level">5</div>
+          <div class="level">6</div>
+          <div class="level">7</div>
+          <div class="level">8</div>
+        </div>
+        <div class="right-panel">
+          <h2>Desafíos del día</h2>
+          <div class="challenge-card">
+            <h3>Depura un algoritmo de ordenamiento</h3>
+            <p>Gana 50 XP y 20 Debug Dollars</p>
+            <button class="btn">Empezar</button>
+          </div>
+          <div class="challenge-card">
+            <h3>Optimiza una consulta SQL</h3>
+            <p>Gana 100 XP y 40 Debug Dollars</p>
+            <button class="btn">Empezar</button>
+          </div>
+          <h2>Tienda</h2>
+          <div class="store-item">
+            <span>Pista para desafío actual</span>
+            <button class="btn">Comprar (50 DD)</button>
+          </div>
+          <div class="store-item">
+            <span>Tutorial avanzado de APIs</span>
+            <button class="btn">Comprar (100 DD)</button>
+          </div>
+          <div class="store-item">
+            <span>Avatar personalizado</span>
+            <button class="btn">Comprar (200 DD)</button>
+          </div>
+          <h2>Próximo torneo</h2>
+          <p>Hackathon de fin de semana: ¡Crea tu propia app!</p>
+          <p>Comienza en: 2d 14h 30m</p>
+          <button class="btn">Inscribirse</button>
+        </div>
+
+        <script>
+          
+        </script>
+      </div> 
+
+      <div id="python" class="contenido" style="display:none;">
+        <h1>Python - Ruta de Aprendizaje</h1>
+        <div class="top-bar">
+          <div class="currency">
+            <svg class="currency-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" fill="#FFD700"/>
+            </svg>
+            <span>500 Debug Dollars</span>
+          </div>
+        </div>
+        <div class="python-levels">
+          <div class="python-column">
+            <h2>Novato: Aprendiz de Código Python</h2>
+            <button class="level-button completed" onclick="abrirModal('modal-python-nivel-1')">Nivel 1: "Hola, Mundo!"</button>
+            <button class="level-button completed" onclick="abrirModal('modal-python-nivel-2')">Nivel 2: Variables y Operadores</button>
+          </div>
+          <div class="python-column">
+            <h2>Principiante: Constructor de Algoritmos Python</h2>
+            <button class="level-button locked">Nivel 11: Diccionarios y Conjuntos</button>
+            <button class="level-button locked">Nivel 12: Funciones Avanzadas</button>
+            <button class="level-button locked">Nivel 13: Herencia y Polimorfismo</button>
+            <button class="level-button locked">Nivel 14: Proyectos POO Avanzados</button>
+            <button class="level-button locked">Nivel 15: Interfaces Gráficas Intermedias</button>
+            </div>
+          <div class="python-column">
+            <h2>Intermedio: Depurador de Código Python</h2>
+            </div>
+        </div>
+      
+        <div id="modal-python-nivel-1" class="modal"> 
+          <div class="modal-contenido">
+            <h3>Nivel 1: "Hola, Mundo!"</h3>
+            <button class="btn-cerrar" onclick="cerrarModal('modal-python-nivel-1')">Cerrar</button>
+            <p>¡Bienvenido al fascinante mundo de Python! En este primer nivel, daremos nuestros primeros pasos en la programación con Python. Exploraremos cómo escribir y ejecutar nuestro primer programa, el clásico "Hola, Mundo!".</p>
+        
+            <h4>Objetivos de aprendizaje:</h4>
+            <ul>
+              <li>Comprender la sintaxis básica de Python.</li>
+              <li>Imprimir mensajes en la consola.</li>
+              <li>Ejecutar un programa Python desde la línea de comandos.</li>
+            </ul>
+        
+            <h4>Recursos:</h4>
+            <ul>
+              <li><a href="https://www.python.org/" target="_blank">Sitio oficial de Python</a></li>
+              <li><a href="https://docs.python.org/3/tutorial/introduction.html" target="_blank">Tutorial oficial de Python</a></li>
+            </ul>
+        
+            <h4>¡Manos a la obra!</h4>
+            <p>Para comenzar, abre tu editor de código favorito o tu entorno de desarrollo integrado (IDE) preferido. Si aún no tienes uno, te recomendamos descargar e instalar <a href="https://www.python.org/downloads/" target="_blank">Python</a> y usar el IDLE que viene incluido.</p>
+        
+            <p>Una vez que tengas tu entorno listo, crea un nuevo archivo y escribe el siguiente código:</p>
+        
+            <pre><code>print("Hola, Mundo!")</code></pre>
+        
+            <p>Guarda el archivo con un nombre descriptivo, como `hola_mundo.py`. Luego, ejecuta el programa desde tu terminal o línea de comandos usando el siguiente comando:</p>
+        
+            <pre><code>python hola_mundo.py</code></pre>
+        
+            <p>¡Deberías ver el mensaje "Hola, Mundo!" impreso en la consola! ¡Felicidades, has escrito y ejecutado tu primer programa en Python!</p>
+        
+            <textarea id="editor-python-1">
+              # Escribe tu código Python aquí
+            </textarea>
+            <button class="btn-ejecutar" onclick="ejecutarCodigo('python', 1)">Ejecutar</button>
+            <iframe id="salida-python-1" srcdoc="<html><head><script src='brython.js'></script><script src='brython_stdlib.js'></script></head><body></body></html>"></iframe>
+            <button class="btn" onclick="mostrarContenidoNivel('python', 2)">Siguiente Nivel</button>             
+          </div>
+        </div>
+      
+        <div id="modal-python-nivel-2" class="modal">
+          <div class="modal-contenido">
+            <h3>Nivel 2: Variables y Operadores</h3>
+            <button class="btn-cerrar" onclick="cerrarModal('modal-python-nivel-2')">Cerrar</button>
+            <p>¡Bien hecho por completar el primer nivel! Ahora, en el nivel 2, exploraremos el concepto de variables y cómo usar diferentes operadores en Python. Aprenderás a almacenar datos en variables y realizar operaciones con ellos.</p>
+      
+            <h4>Objetivos de aprendizaje:</h4>
+            <ul>
+              <li>Declarar y asignar valores a variables.</li>
+              <li>Utilizar operadores aritméticos, de comparación y lógicos.</li>
+              <li>Comprender la precedencia de operadores.</li>
+            </ul>
+      
+            <h4>Recursos:</h4>
+            <ul>
+              <li><a href="https://docs.python.org/3/tutorial/introduction.html#first-steps-towards-programming" target="_blank">Tutorial oficial de Python: Primeros pasos hacia la programación</a></li>
+              <li><a href="https://www.w3schools.com/python/python_operators.asp" target="_blank">W3Schools: Operadores en Python</a></li>
+            </ul>
+      
+            <h4>¡A programar!</h4>
+            <p>Las variables son como contenedores que almacenan datos en la memoria de la computadora. En Python, puedes declarar una variable simplemente asignándole un valor. Por ejemplo:</p>
+      
+            ```python
+            nombre = "Alice"
+            edad = 30
+            precio = 19.99
+            ```
+      
+            <p>Los operadores te permiten realizar operaciones con las variables. Python ofrece una variedad de operadores, incluyendo:</p>
+      
+            * **Operadores aritméticos:** `+`, `-`, `*`, `/`, `%`, `**`, `//`
+            * **Operadores de comparación:** `==`, `!=`, `>`, `<`, `>=`, `<=`
+            * **Operadores lógicos:** `and`, `or`, `not`
+      
+            <p>Puedes combinar variables y operadores para crear expresiones. Por ejemplo:</p>
+      
+            ```python
+            total = precio * 2 
+            es_mayor_de_edad = edad >= 18
+            ```
+      
+            <p>¡Experimenta con diferentes variables y operadores para familiarizarte con su uso! Recuerda que la práctica es clave para dominar la programación.</p>
+      
+            <textarea id="editor-python-2">
+              # Escribe tu código Python aquí
+            </textarea>
+            <button class="btn-ejecutar" onclick="ejecutarCodigo('python', 2)">Ejecutar</button>
+            <iframe id="salida-python-2" srcdoc=" "></iframe> 
+            <button class="btn-completar">Completar</button>
+            <button class="btn" onclick="mostrarContenidoNivel('python', 1)">Nivel Anterior</button>
+            <button class="btn" onclick="mostrarContenidoNivel('python', 3)" disabled>Siguiente Nivel</button>
+          </div>
+        </div>
+      </div>
+
+<div id="java" class="contenido" style="display:none;">
+        <div class="top-bar">
+          <h1>Java - Ruta de Aprendizaje</h1>
+          <div class="currency">
+            <svg class="currency-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" fill="#FFD700"/>
+            </svg>
+            <span>500 Debug Dollars</span>
+          </div>
+        </div>
+        <div class="java-levels">
+          <div class="java-category">
+            <h2>Novato: Aprendiz de Código Java</h2>
+            <button class="level-button completed">Nivel 1: "Hola, Mundo!"</button>
+            <button class="level-button completed">Nivel 2: Variables y Operadores</button>
+            <button class="level-button">Nivel 3: Estructuras de Control</button>
+            <button class="level-button locked">Nivel 4: Funciones y Métodos</button>
+            <button class="level-button locked">Nivel 5: Depuración Simple</button>
+            <button class="level-button locked">Nivel 6: Mini-Proyectos Java</button>
+            <button class="level-button locked">Nivel 7: Arrays y Colecciones (Intro)</button>
+            <button class="level-button locked">Nivel 8: Intro a POO en Java</button>
+            <button class="level-button locked">Nivel 9: Proyectos Básicos con POO</button>
+            <button class="level-button locked">Nivel 10: Intro a Interfaces Gráficas</button>
+          </div>
+          <div class="java-category">
+            <h2>Principiante: Constructor de Algoritmos Java</h2>
+            <button class="level-button locked">Nivel 11: Arrays y Colecciones (Avanzado)</button>
+            <button class="level-button locked">Nivel 12: Herencia y Polimorfismo</button>
+            <button class="level-button locked">Nivel 13: Interfaces y Clases Abstractas</button>
+            <button class="level-button locked">Nivel 14: Proyectos POO Avanzados</button>
+            <button class="level-button locked">Nivel 15: Interfaces Gráficas Intermedias</button>
+            <button class="level-button locked">Nivel 16: Manejo de Excepciones</button>
+            <button class="level-button locked">Nivel 17: Entrada/Salida (I/O)</button>
+            <button class="level-button locked">Nivel 18: Genéricos</button>
+            <button class="level-button locked">Nivel 19: Colecciones Avanzadas</button>
+            <button class="level-button locked">Nivel 20: Programación Funcional</button>
+            <button class="level-button locked">Nivel 21: Bases de Datos y JDBC</button>
+            <button class="level-button locked">Nivel 22: Introducción a Spring Boot</button>
+            <button class="level-button locked">Nivel 23: Pruebas Unitarias</button>
+            <button class="level-button locked">Nivel 24: Desarrollo Web Básico</button>
+            <button class="level-button locked">Nivel 25: Introducción a Android</button>
+          </div>
+          <div class="java-category">
+            <h2>Intermedio: Depurador de Código Java</h2>
+            <button class="level-button locked">Nivel 26: Estructuras de Datos Avanzadas</button>
+            <button class="level-button locked">Nivel 27: Algoritmos y Complejidad</button>
+            <button class="level-button locked">Nivel 28: Bases de Datos y SQL Avanzado</button>
+            <button class="level-button locked">Nivel 29: Proyectos Web Intermedios</button>
+            <button class="level-button locked">Nivel 30: Juegos 2D Básicos</button>
+            <button class="level-button locked">Nivel 31: Programación Concurrente</button>
+            <button class="level-button locked">Nivel 32: Redes y Sockets</button>
+            <button class="level-button locked">Nivel 33: Reflexión</button>
+            <button class="level-button locked">Nivel 34: Anotaciones</button>
+            <button class="level-button locked">Nivel 35: JavaFX</button>
+            <button class="level-button locked">Nivel 36: Spring Framework</button>
+            <button class="level-button locked">Nivel 37: Hibernate/JPA</button>
+            <button class="level-button locked">Nivel 38: Desarrollo de APIs REST</button>
+            <button class="level-button locked">Nivel 39: Microservicios</button>
+            <button class="level-button locked">Nivel 40: Desarrollo de Aplicaciones Android</button>
+            <button class="level-button locked">Nivel 41: Pruebas de Integración</button>
+            <button class="level-button locked">Nivel 42: DevOps con Java</button>
+            <button class="level-button locked">Nivel 43: Seguridad en Java</button>
+            <button class="level-button locked">Nivel 44: Optimización de Rendimiento</button>
+            <button class="level-button locked">Nivel 45: Introducción a Big Data</button>
+            <button class="level-button locked">Nivel 46: Cloud Computing con Java</button>
+            <button class="level-button locked">Nivel 47: Desarrollo de Juegos 2D</button>
+            <button class="level-button locked">Nivel 48: Introducción a la Realidad Aumentada</button>
+            <button class="level-button locked">Nivel 49: Patrones de Diseño</button>
+            <button class="level-button locked">Nivel 50: Proyectos de Portafolio</button>
+          </div>
+          </div>
+      </div>
+
+  <div id="csharp" class="contenido" style="display:none;">
+        <div class="top-bar">
+          <h1>Ruta de Aprendizaje C#</h1>
+          <div style="display: flex;">
+            <span style="margin-right: 15px;">🏆 1200 XP</span>
+            <div class="currency">
+              <svg class="currency-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" fill="#FFD700"/>
+              </svg>
+              <span>500 Debug Dollars</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rank">
+          <h2>1. Novato (Novice): "Aprendiz de Código C#"</h2>
+          <div class="level-path">
+            <div class="level" data-level="1">1</div>
+            <div class="level" data-level="2">2</div>
+            <div class="level" data-level="3">3</div>
+            <div class="level" data-level="4">4</div>
+            <div class="level" data-level="5">5</div>
+            <div class="level" data-level="6">6</div>
+            <div class="level" data-level="7">7</div>
+            <div class="level" data-level="8">8</div>
+            <div class="level" data-level="9">9</div>
+            <div class="level" data-level="10">10</div>
+          </div>
+        </div>
+
+        <div class="rank">
+          <h2>2. Principiante (Junior Developer): "Constructor de Algoritmos C#"</h2>
+          <div class="level-path">
+            <div class="level" data-level="11">11</div>
+            <div class="level" data-level="12">12</div>
+            <div class="level" data-level="13">13</div>
+            <div class="level" data-level="14">14</div>
+            <div class="level" data-level="15">15</div>
+            <div class="level" data-level="16">16</div>
+            <div class="level" data-level="17">17</div>
+            <div class="level" data-level="18">18</div>
+            <div class="level" data-level="19">19</div>
+            <div class="level" data-level="20">20</div>
+            <div class="level" data-level="21">21</div>
+            <div class="level" data-level="22">22</div>
+            <div class="level" data-level="23">23</div>
+            <div class="level" data-level="24">24</div>
+            <div class="level" data-level="25">25</div>
+          </div>
+        </div>
+
+        <div class="rank">
+          <h2>3. Intermedio (Mid-Level Developer): "Depurador de Código C#"</h2>
+          <div class="level-path">
+            <div class="level" data-level="26">26</div>
+            <div class="level" data-level="27">27</div>
+            <div class="level" data-level="28">28</div>
+            <div class="level" data-level="29">29</div>
+            <div class="level" data-level="30">30</div>
+            <div class="level" data-level="50">50</div>
+          </div>
+        </div>
+
+        <div class="level-info"></div>
+      </div>
